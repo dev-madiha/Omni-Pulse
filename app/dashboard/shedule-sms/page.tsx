@@ -3,18 +3,17 @@ import React from "react";
 
 const page = () => {
   return (
-
     <div>
-      <div className="bg-white p-4 rounded shadow w-52">
+      <div className="bg-white p-4 rounded shadow w-full sm:w-52">
         <p className="text-gray-500">Availabel SMS </p>
         <h2 className="text-2xl font-bold">10,00,000</h2>
       </div>
 
       <div>
-        <h1 className="my-6 text-[26px]">Create New SMS Batch</h1>
+        <h1 className="my-6 text-xl sm:text-[26px]">Create New SMS Batch</h1>
         <div>
           <form className="bg-white rounded shadow p-6  w-full">
-            <div className=" grid-cols-1 grid lg:grid-cols-2  lg:gap-6">
+            <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
               <div className="mb-4">
                 <label className="block text-gray-700 mb-2">Batch Name</label>
                 <input
@@ -23,7 +22,7 @@ const page = () => {
                   placeholder="Enter batch name"
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-gray-700 mb-2">
                   Schedule Date
@@ -63,10 +62,10 @@ const page = () => {
           </form>
 
           <div>
-            <h1 className="text-[26px] my-4">SMS Batch History</h1>
+            <h1 className="text-xl sm:text-[26px] my-4">SMS Batch History</h1>
             <div>
-              <div className="bg-white rounded shadow w-full ">
-                <table className="w-full rounded-full">
+              <div className="bg-white rounded shadow w-full overflow-x-auto">
+                <table className="min-w-[600px] w-full">
                   <thead>
                     <tr className="bg-[#0542473c]">
                       <th className="text-left px-4 py-2">Create Date</th>

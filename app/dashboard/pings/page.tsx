@@ -8,10 +8,10 @@ const page = () => {
         <p className="text-gray-500">Total Records</p>
         <h2 className="text-2xl font-bold">6M</h2>
       </div>
-      
+
       <div>
-        <div className="bg-white rounded shadow w-full mt-8">
-          <table className="w-full">
+        <div className="bg-white rounded shadow w-full mt-8 overflow-x-auto">
+          <table className="min-w-[800px] w-full">
             <thead>
               <tr className="bg-[#0542473c]">
                 <th className="text-left px-4 py-2">Create Date</th>

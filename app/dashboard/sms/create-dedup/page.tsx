@@ -1,53 +1,48 @@
 import Button from "@/components/Buttons";
 import { Eye } from "lucide-react";
 import Link from "next/link";
+
 import React from "react";
 
 const page = () => {
   return (
-    <div className=" space-y-6">
-
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-        <div className="bg-white p-4 rounded shadow w-full sm:w-52">
-          <p className="text-gray-500 text-sm">Total Records</p>
-          <h2 className="text-2xl font-bold">6M</h2>
+    <div>
+      <div className="flex justify-between items-center mb-6">
+        <div className="bg-white p-4 rounded shadow w-52">
+          <p className="text-gray-500">Total Records</p>
+          <h2 className="text-2xl font-bold">100,00,00</h2>
         </div>
-
-        <Link href="/dashboard/dma/new-dma" className="w-full sm:w-auto">
-          <Button text="New DMA" onClick={undefined} />
+        <Link href="/dashboard/sms/create-batch">
+          <Button text=" ➕ Create Batch" onClick={undefined} />
         </Link>
       </div>
-
-      <h1 className="text-lg sm:text-xl font-semibold mb-3">DMA History</h1>
-
-      <div className="bg-white rounded shadow overflow-x-auto">
-        <table className="min-w-[600px] w-full border-collapse">
+      <h1 className="text-[26px] py-2">SMS batch History</h1>
+      <div>
+        <table className="w-full">
           <thead>
-            <tr className="bg-[#0542473c] text-sm sm:text-base">
+            <tr className="bg-[#0542473c]">
               <th className="text-left px-4 py-3">Create Date</th>
-              <th className="text-left px-4 py-3">DMA Batch</th>
+              <th className="text-left px-4 py-3">Dedup Batch</th>
               <th className="text-left px-4 py-3">Status</th>
               <th className="text-left px-4 py-3">Complete Date</th>
               <th className="text-left px-4 py-3">Action</th>
             </tr>
           </thead>
-
           <tbody>
             {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-              <tr key={item} className="border-t text-sm sm:text-base">
+              <tr key={item} className="border-t">
                 <td className="px-4 py-3">2024-01-01</td>
                 <td className="px-4 py-3">Batch {item}</td>
                 <td className="px-4 py-3">Completed</td>
                 <td className="px-4 py-3">2024-01-02</td>
                 <td className="px-4 py-3">
-                  <Eye className="w-5 h-5 cursor-pointer" />
+                  <Eye />
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
     </div>
   );
 };

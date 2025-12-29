@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Dropdown from "./Dropdown";
+
 import {
   Bell,
   ChevronDown,
@@ -26,17 +27,17 @@ export default function Navbar() {
   const currentLabel = routeMap[pathname] || "Super DB";
 
   return (
-    
     <nav className="bg-[#d7fe65] px-4 md:px-6 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 md:gap-40">
           <Image
-            src="/images/logo-img (2).png"
+            src="/images/logo-2.png"
             alt="Omni Pulse Logo"
             width={120}
             height={60}
             priority
           />
+
           <div className="relative hidden md:block">
             <button
               onClick={() => setOpen(!open)}
@@ -46,7 +47,7 @@ export default function Navbar() {
               <ChevronDown />
             </button>
             {open && (
-              <div className="absolute top-full left-0 mt-2 z-50">
+              <div className="absolute  top-full left-0 mt-2 z-50">
                 <Dropdown close={() => setOpen(false)} />
               </div>
             )}
@@ -82,7 +83,6 @@ export default function Navbar() {
               {currentLabel}
               <ChevronDown />
             </button>
-
             {open && (
               <div className="mt-2">
                 <Dropdown close={() => setOpen(false)} />
